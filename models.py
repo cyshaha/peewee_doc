@@ -67,4 +67,13 @@ class KV(Model):
     class Meta:
         database = db_mysql
 
-db_mysql.create_tables([Person, Pet, User, MyModel, Tweet, User2, KV])
+
+class Sample(Model):
+    counter = IntegerField()
+    value = FloatField()
+
+    class Meta:
+        database = db_mysql
+
+
+db_mysql.create_tables([Person, Pet, User, MyModel, Tweet, User2, KV, Sample])
