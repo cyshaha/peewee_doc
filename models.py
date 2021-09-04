@@ -36,7 +36,7 @@ class Tweet(Model):
     message = CharField()
     user = ForeignKeyField(User, backref='user')
     is_published = BooleanField(default='')
-    creation_date = DateTimeField(null=True)
+    creation_date = DateField(null=True)
 
     class Meta:
         database = db_mysql
