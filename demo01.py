@@ -1,33 +1,10 @@
 from peewee import *
+from models import Person, Pet
 from datetime import date
 
 
-db = MySQLDatabase(host='127.0.0.1', port=3306, user='root', passwd='root', database="people")
-db.connect()
-
-
-class Person(Model):
-    name = CharField()
-    birthday = DateField()
-
-    class Meta:
-        database = db # This model uses the "people.db" database.
-
-
-class Pet(Model):
-    owner = ForeignKeyField(Person, backref='pets')
-    name = CharField()
-    animal_type = CharField()
-
-    class Meta:
-        database = db # this model uses the "people.db" database
-
-
-
-# db.create_tables([Person, Pet])
 # uncle_bob = Person(name='Bob', birthday=date(1960, 1, 15))
-# uncle_bob.save() # bob is now s
-# tored in the database
+# uncle_bob.save()
 # # Returns: 1
 
 # grandma = Person.create(name='Grandma', birthday=date(1935, 3, 1))
