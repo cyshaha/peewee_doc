@@ -31,6 +31,15 @@ class User(Model):
         database = db_mysql
 
 
+class MyModel(Model):
+    id = AutoField()
+    field1 = CharField()
+    field2 = CharField()
+
+    class Meta:
+        database = db_mysql
+
+
 class Tweet(Model):
     id = AutoField()
     message = CharField()
@@ -58,4 +67,4 @@ class KV(Model):
     class Meta:
         database = db_mysql
 
-db_mysql.create_tables([Person, Pet, User, Tweet, User2, KV])
+db_mysql.create_tables([Person, Pet, User, MyModel, Tweet, User2, KV])

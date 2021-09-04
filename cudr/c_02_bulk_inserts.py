@@ -2,19 +2,11 @@
 
 from peewee import *
 from cudr.c_01_insert import Tweet
+from models import MyModel
 
 db = MySQLDatabase(host='127.0.0.1', port=3306, user='root', passwd='root', database="peewee_doc")
 db.connect()
 
-class MyModel(Model):
-    id = AutoField()
-    field1 = CharField()
-    field2 = CharField()
-
-    class Meta:
-        database = db
-
-# db.create_tables([MyModel])
 
 # 1.Model.create() in a loop
 data_source = [
