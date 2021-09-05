@@ -1,0 +1,38 @@
+# 运算符汇总
+
+
+## 常见运算符
+
+== x等于y
+< x小于y
+<= x小于或等于y
+> x大于y
+>= x大于或等于y
+!= x不等于y
+<< x IN y，其中y是列表或子查询
+>> x IS y，其中y是None/NULL
+% x LIKE y，其中y可能包含通配符
+** x i类似y，其中y可能包含通配符
+^ X异或Y
+~ 一元运算否定（例如，不是x）
+
+
+## 其他可用查询运算方法
+.in_(value)	 与<<相同
+.not_in(value)  不在其中
+.is_null(is_null) 为空或不为空。接受布尔参数
+.contains(substr) 子字符串的通配符搜索。
+.startswith(prefix) 搜索以prefix开头的值
+.endswith(suffix) 搜索以suffix结尾的值
+.between(low, high) 搜索介于 low 和 high 的值
+.regexp(exp)  正则表达式匹配（区分大小写）
+.iregexp(exp)  正则表达式匹配（不区分大小写）
+.concat(other) 使用 || 连接两个字符串或对象
+.distinct() DISTINCT selection
+.cast(type) 将列的值强制转换为给定的类型
+
+
+## 逻辑运算符
+&  and
+|  or
+~  not
