@@ -46,13 +46,13 @@ def populate_test_data():
 
 # 注意点
 #1.使用如下方法可以把执行查询语句都打印出来
-import logging
-logger = logging.getLogger('peewee')
-logger.addHandler(logging.StreamHandler())
-logger.setLevel(logging.DEBUG)
+# import logging
+# logger = logging.getLogger('peewee')
+# logger.addHandler(logging.StreamHandler())
+# logger.setLevel(logging.DEBUG)
 
 #2.SQLite默认不使用外键，如下方法开启外键
 # db = SqliteDatabase('my_app.db', pragmas={'foreign_keys': 1})
 
-
-populate_test_data()
+if __name__ == "__main__":
+    populate_test_data()
