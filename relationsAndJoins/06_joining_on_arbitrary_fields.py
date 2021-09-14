@@ -1,7 +1,6 @@
 from relationsAndJoins.model_and_data import User, BaseModel
 from peewee import *
 
-
 # 在任意字段上联接
 # 如果两个表之间不存在外键，则仍可以执行联接，但必须手动指定联接谓词
 # 见官方文档示例
