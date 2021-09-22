@@ -44,7 +44,7 @@ from models import Tweet, User
 # column_name = None --在数据库中显式指定列名。
 # default = None --默认值
 # primary_key = False --表的主键
-# constraints = None - one or more constraints, e.g. [Check('price > 0')]
+# constraints = None - 约束，如[Check('price > 0')]
 # sequence = None --序列名（如果后端支持）
 # collation = None --用于排序字段/索引的排序规则
 # unindexed = False --指示应取消对虚拟表上的字段的索引（sqlite only*）
