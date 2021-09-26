@@ -13,8 +13,8 @@ data_source = [
     {'field1': 'val1-1', 'field2': 'val1-2'},
     {'field1': 'val2-1', 'field2': 'val2-2'},
 ]
-# for data_dict in data_source:
-#     MyModel.create(**data_dict)
+for data_dict in data_source:
+    MyModel.create(**data_dict)
 # 这个方法会很慢，因为：
 # 1.如果不在事务中包装循环，则每次调用 create() 发生在它自己的事务中。那真是太慢了
 # 2.上述代码有相当多的python逻辑，并且 InsertQuery 必须生成并解析为SQL
@@ -22,9 +22,9 @@ data_source = [
 
 
 # 2.将其包装在事务中 atomic()，
-# with db.atomic():
-#     for data_dict in data_source:
-#         MyModel.create(**data_dict)
+with db.atomic():
+    for data_dict in data_source:
+        MyModel.create(**data_dict)
 # 比循环亏啊，但是仍然受2,3影响
 
 
